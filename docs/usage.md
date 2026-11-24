@@ -207,7 +207,7 @@ Next, the `Period` struct also has some getters:
 - `precision() -> Precision`
 - `boundaries() -> Boundaries`
 
-`duration()` measures the calendar interval between included endpoints, without the extra unit counted by `length()`. Use `equals`, `is_larger_than`, `is_smaller_than` or `compare_to` to compare durations. As in the PHP package, `equals` also accepts equal whole-day counts even when the hours differ. `compare_to` returns `std::cmp::Ordering` after adding both calendar intervals to the same current UTC second. `compare_at` accepts an explicit reference date.
+`duration()` measures the calendar interval between included endpoints, without the extra unit counted by `length()`. Use `equals`, `is_larger_than`, `is_smaller_than` or `compare_to` to compare durations. `equals` also accepts equal whole-day counts even when the hours differ. `compare_to` returns `std::cmp::Ordering` after adding both calendar intervals to the same current UTC second. `compare_at` accepts an explicit reference date.
 
 Use `to_string()` for the original endpoints with boundary notation, such as `[2021-01-01,2021-01-31]`. Parse that notation with `str::parse::<Period>()`; the date format determines precision. The notation has no timezone, so parsing it uses UTC.
 
@@ -266,7 +266,7 @@ Finally, there are a few utility methods available on `PeriodCollection` as well
 
 Collections support `FromIterator`, `Extend`, indexing and owned or borrowed iteration. Use `push`, indexed assignment or `remove` to change entries. The periods themselves remain immutable.
 
-## Compatibility
+## Date inputs and iteration
 
 You can construct a `Period` from Jiff dates or timezone-aware dates:
 
