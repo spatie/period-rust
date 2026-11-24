@@ -13,7 +13,7 @@ Periods are always immutable, there's never the worry about your input dates bei
 
 ## Support us
 
-[<img src="https://spatie.be/github-ad-image/spatie-period.jpg" alt="Support Spatie's open source work" width="419px" />](https://spatie.be/github-ad-click/spatie-period)
+[<img src="https://spatie.be/github-ad-image/period-rust.jpg" alt="Support Spatie's open source work" width="419px" />](https://spatie.be/github-ad-click/period-rust)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
