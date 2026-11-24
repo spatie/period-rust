@@ -21,17 +21,10 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 
 ## Installation
 
-Requires Rust 1.89 or newer. Once the crate is published:
+Requires Rust 1.89 or newer.
 
 ```sh
 cargo add spatie-period
-```
-
-Before publication, use a path dependency from a neighboring application:
-
-```toml
-[dependencies]
-spatie-period = { path = "../period-rust" }
 ```
 
 ## Usage

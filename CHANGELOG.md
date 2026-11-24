@@ -2,7 +2,7 @@
 
 All notable changes to `spatie-period` will be documented in this file.
 
-## Unreleased
+## 1.0.0 - 2026-11-24
 
 - Port period precision, boundaries, comparisons, overlap, subtraction, gaps, symmetric difference, renewal and duration comparisons from spatie/period.
 - Add ordered period collections, calendar iteration and ASCII visualization.
