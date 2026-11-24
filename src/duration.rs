@@ -26,26 +26,14 @@ impl<'a> PeriodDuration<'a> {
             true,
         )
     }
-    /// Whether endpoints, whole-day count, or calendar durations are equal.
+    /// Whether calendar duration ordering considers these durations equal.
     ///
-    /// As in the PHP package, durations can be equal by day count even when their
-    /// hours differ. Use [`compare_to`](Self::compare_to) to order calendar durations.
+    /// Uses the same reference instant as [`compare_to`](Self::compare_to).
     ///
     /// # Errors
     /// Returns an error if calendar arithmetic exceeds the supported range.
     pub fn equals(self, other: Self) -> Result<bool, Error> {
-        if (self.period.start() == other.period.start() && self.period.end() == other.period.end())
-            || (self.period.included_start() == other.period.included_start()
-                && self.period.included_end() == other.period.included_end())
-        {
-            return Ok(true);
-        }
-        let days = |period: &Period| {
-            period
-                .precision()
-                .day_count(period.included_end(), period.included_start())
-        };
-        Ok(days(self.period)? == days(other.period)? || self.compare_to(other)? == Ordering::Equal)
+        Ok(self.compare_to(other)? == Ordering::Equal)
     }
     /// Orders calendar intervals after adding them to the same current UTC instant.
     ///

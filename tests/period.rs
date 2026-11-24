@@ -449,10 +449,15 @@ fn empty_collections_and_indexed_mutation_use_rust_collection_conventions() {
 }
 
 #[test]
-fn duration_keeps_php_day_equality_separate_from_calendar_ordering() {
+fn duration_equality_agrees_with_calendar_ordering() {
     let a = period("[2021-01-01 00,2021-01-01 01]");
     let b = period("[2021-01-01 00,2021-01-01 12]");
-    assert!(a.duration().equals(b.duration()).unwrap());
+    assert!(!a.duration().equals(b.duration()).unwrap());
+    assert!(!b.duration().equals(a.duration()).unwrap());
+    let same_duration = period("[2021-01-03 04,2021-01-03 05]");
+    assert!(a.duration().equals(same_duration.duration()).unwrap());
+    let excluded_start = period("(2021-01-01 00,2021-01-01 01]");
+    assert!(!a.duration().equals(excluded_start.duration()).unwrap());
     assert_eq!(
         a.duration().compare_to(b.duration()).unwrap(),
         Ordering::Less
