@@ -1,4 +1,4 @@
-# spatie-period
+# Complex period comparisons
 
 [![Latest version on crates.io](https://img.shields.io/crates/v/spatie-period.svg?style=flat-square)](https://crates.io/crates/spatie-period)
 [![Tests](https://img.shields.io/github/actions/workflow/status/spatie/period-rust/ci.yml?branch=main&style=flat-square)](https://github.com/spatie/period-rust/actions/workflows/ci.yml)
