@@ -1,0 +1,28 @@
+[package]
+name = "spatie-period"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89"
+authors = ["Freek Van der Herten <freek@spatie.be>"]
+description = "Complex period comparisons"
+license = "MIT"
+repository = "https://github.com/spatie/period-rust"
+documentation = "https://docs.rs/spatie-period"
+homepage = "https://spatie.be/docs/period-rust/v1/introduction"
+readme = "README.md"
+keywords = ["spatie", "date", "period", "interval", "overlap"]
+categories = ["date-and-time"]
+include = ["/src/", "/tests/*.rs", "/build.rs", "/docs/", "/README.md", "/LICENSE.md", "/CHANGELOG.md", "/CONTRIBUTING.md", "/SECURITY.md", "/Cargo.lock"]
+
+[dependencies]
+jiff = { version = "0.2", features = ["tzdb-bundle-always"] }
+thiserror = "2"
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "deny"
+missing_debug_implementations = "deny"
+
+[profile.release]
+lto = "thin"
+strip = true
